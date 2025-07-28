@@ -130,7 +130,8 @@ class AssetController extends Controller
             'assigned_to' => 'nullable|exists:users,id',
             'purchase_date' => 'nullable|date',
             'purchase_cost' => 'nullable|numeric|min:0',
-            'warranty_expires' => 'nullable|date',
+            // Nome correto do campo de garantia
+            'warranty_end' => 'nullable|date',
             'notes' => 'nullable|string',
             'custom_fields' => 'nullable|array'
         ]);
@@ -182,7 +183,8 @@ class AssetController extends Controller
             'assigned_to' => 'nullable|exists:users,id',
             'purchase_date' => 'nullable|date',
             'purchase_cost' => 'nullable|numeric|min:0',
-            'warranty_expires' => 'nullable|date',
+            // Nome correto do campo de garantia
+            'warranty_end' => 'nullable|date',
             'notes' => 'nullable|string',
             'custom_fields' => 'nullable|array'
         ]);

@@ -471,7 +471,7 @@ use Illuminate\Support\Str;
                                 <div class="modern-content">
                                     <div class="modern-title">{{ $asset->name }}</div>
                                     <div class="modern-subtitle">
-                                        Garantia: {{ $asset->warranty_expires ? $asset->warranty_expires->diffForHumans() : 'N/A' }}
+                                        Garantia: {{ $asset->warranty_end ? $asset->warranty_end->diffForHumans() : 'N/A' }}
                                     </div>
                                 </div>
                                 <div class="modern-badge badge-new">Atenção</div>

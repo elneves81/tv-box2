@@ -187,16 +187,16 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if($asset->warranty_expires)
-                                            @if($asset->warranty_expires->isPast())
+                                        @if($asset->warranty_end)
+                                            @if($asset->warranty_end->isPast())
                                                 <span class="badge badge-danger">Expirada</span>
-                                                <br><small>{{ $asset->warranty_expires->format('d/m/Y') }}</small>
-                                            @elseif($asset->warranty_expires->diffInDays() <= 30)
+                                                <br><small>{{ $asset->warranty_end->format('d/m/Y') }}</small>
+                                            @elseif($asset->warranty_end->diffInDays() <= 30)
                                                 <span class="badge badge-warning">Expira em breve</span>
-                                                <br><small>{{ $asset->warranty_expires->format('d/m/Y') }}</small>
+                                                <br><small>{{ $asset->warranty_end->format('d/m/Y') }}</small>
                                             @else
                                                 <span class="badge badge-success">Válida</span>
-                                                <br><small>{{ $asset->warranty_expires->format('d/m/Y') }}</small>
+                                                <br><small>{{ $asset->warranty_end->format('d/m/Y') }}</small>
                                             @endif
                                         @else
                                             <span class="text-muted">N/A</span>

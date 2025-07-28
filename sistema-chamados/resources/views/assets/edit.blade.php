@@ -170,10 +170,10 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="warranty_expires">Garantia Expira</label>
-                                    <input type="date" class="form-control @error('warranty_expires') is-invalid @enderror" 
-                                           id="warranty_expires" name="warranty_expires" value="{{ old('warranty_expires', $asset->warranty_expires?->format('Y-m-d')) }}">
-                                    @error('warranty_expires')
+                                    <label for="warranty_end">Garantia Expira</label>
+                                    <input type="date" class="form-control @error('warranty_end') is-invalid @enderror"
+                                           id="warranty_end" name="warranty_end" value="{{ old('warranty_end', $asset->warranty_end?->format('Y-m-d')) }}">
+                                    @error('warranty_end')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
