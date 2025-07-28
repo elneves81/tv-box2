@@ -120,11 +120,11 @@
                                 <tr>
                                     <td><strong>Garantia Expira:</strong></td>
                                     <td>
-                                        @if($asset->warranty_expires)
-                                            {{ $asset->warranty_expires->format('d/m/Y') }}
-                                            @if($asset->warranty_expires->isPast())
+                                        @if($asset->warranty_end)
+                                            {{ $asset->warranty_end->format('d/m/Y') }}
+                                            @if($asset->warranty_end->isPast())
                                                 <span class="badge badge-danger ml-1">Expirada</span>
-                                            @elseif($asset->warranty_expires->diffInDays() <= 30)
+                                            @elseif($asset->warranty_end->diffInDays() <= 30)
                                                 <span class="badge badge-warning ml-1">Expira em breve</span>
                                             @else
                                                 <span class="badge badge-success ml-1">Válida</span>

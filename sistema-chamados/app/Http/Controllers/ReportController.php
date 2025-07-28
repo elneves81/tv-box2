@@ -185,12 +185,12 @@ class ReportController extends Controller
         }
 
         if ($request->has('under_warranty') && $request->under_warranty === '1') {
-            $query->whereNotNull('warranty_expires')
-                  ->where('warranty_expires', '>=', now());
+            $query->whereNotNull('warranty_end')
+                  ->where('warranty_end', '>=', now());
         } elseif ($request->has('under_warranty') && $request->under_warranty === '0') {
             $query->where(function($q) {
-                $q->whereNull('warranty_expires')
-                  ->orWhere('warranty_expires', '<', now());
+                $q->whereNull('warranty_end')
+                  ->orWhere('warranty_end', '<', now());
             });
         }
 
@@ -227,8 +227,8 @@ class ReportController extends Controller
             
         // Ativos com garantia expirada
         $expiredWarrantyCount = $query->clone()
-            ->whereNotNull('warranty_expires')
-            ->where('warranty_expires', '<', now())
+            ->whereNotNull('warranty_end')
+            ->where('warranty_end', '<', now())
             ->count();
 
         // Resultados paginados para tabela

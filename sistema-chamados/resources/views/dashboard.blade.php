@@ -588,7 +588,7 @@ use Illuminate\Support\Str;
                                         <small class="text-muted">{{ $asset->assetModel->name ?? 'N/A' }}</small>
                                     </div>
                                     <span class="badge badge-warning badge-pill">
-                                        {{ $asset->warranty_expires ? $asset->warranty_expires->diffForHumans() : 'N/A' }}
+                                        {{ $asset->warranty_end ? $asset->warranty_end->diffForHumans() : 'N/A' }}
                                     </span>
                                 </div>
                             </div>
